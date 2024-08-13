@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Section</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom backgrounds for different themes */
+        .bg-theme-1 {
+            background-color: #1E0B45; /* Purple background */
+            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+            background-size: cover;
+        }
+        .bg-theme-2 {
+            background-color: #2C3E50; /* Midnight Blue */
+        }
+        .bg-theme-3 {
+            background-color: #34495E; /* Wet Asphalt */
+        }
+        .bg-theme-4 {
+            background-color: #9B59B6; /* Amethyst */
+        }
+        .bg-theme-5 {
+            background-color: #16A085; /* Green Sea */
+        }
+    </style>
+</head>
+<body class="bg-theme-1 text-gray-900 dark:text-gray-100">
+    <!-- Light/Dark Mode Toggle -->
+    <div class="flex justify-end p-4">
+        <button id="theme-toggle" class="bg-gray-200 dark:bg-gray-800 p-2 rounded">
+            Toggle Theme
+        </button>
+    </div>
+
+    <!-- Pricing Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <h2 class="text-3xl font-extrabold sm:text-4xl text-white">Our Pricing</h2> <!-- Text color changed to white -->
+            <p class="mt-4 text-lg leading-6 text-gray-300 dark:text-gray-300">
+                Choose a plan that fits your needs.
+            </p>
+        </div>
+
+        <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Basic Plan -->
+            <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6">
+                <h3 class="text-lg font-semibold">Basic</h3>
+                <p class="mt-4 text-gray-600 dark:text-gray-400">Great for starters</p>
+                <div class="mt-6">
+                    <span class="text-4xl font-extrabold">$10</span>
+                    <span class="text-base font-medium text-gray-600 dark:text-gray-400">/mo</span>
+                </div>
+                <button class="mt-6 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+                    Choose Plan
+                </button>
+            </div>
+
+            <!-- Pro Plan -->
+            <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6">
+                <h3 class="text-lg font-semibold">Pro</h3>
+                <p class="mt-4 text-gray-600 dark:text-gray-400">Best for professionals</p>
+                <div class="mt-6">
+                    <span class="text-4xl font-extrabold">$20</span>
+                    <span class="text-base font-medium text-gray-600 dark:text-gray-400">/mo</span>
+                </div>
+                <button class="mt-6 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+                    Choose Plan
+                </button>
+            </div>
+
+            <!-- Enterprise Plan -->
+            <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6">
+                <h3 class="text-lg font-semibold">Enterprise</h3>
+                <p class="mt-4 text-gray-600 dark:text-gray-400">For large businesses</p>
+                <div class="mt-6">
+                    <span class="text-4xl font-extrabold">$50</span>
+                    <span class="text-base font-medium text-gray-600 dark:text-gray-400">/mo</span>
+                </div>
+                <button class="mt-6 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+                    Choose Plan
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const bodyElement = document.body;
+        const themes = ['bg-theme-1', 'bg-theme-2', 'bg-theme-3', 'bg-theme-4', 'bg-theme-5'];
+        let currentTheme = 0;
+
+        themeToggleBtn.addEventListener('click', () => {
+            bodyElement.classList.remove(...themes);
+            currentTheme = (currentTheme + 1) % themes.length;
+            bodyElement.classList.add(themes[currentTheme]);
+        });
+    </script>
+</body>
+</html>
